@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: HgjVdkJoC5ru4PVQcznaGErun4tnweZp22ebd26YAQ3iw7a4iEkDozCIvGm6h9fW
+      POSTGRES_DB: quickdine
+      POSTGRES_USER: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
