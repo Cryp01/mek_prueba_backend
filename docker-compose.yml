@@ -6,11 +6,30 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_PASSWORD: HgjVdkJoC5ru4PVQcznaGErun4tnweZp22ebd26YAQ3iw7a4iEkDozCIvGm6h9fW
-      POSTGRES_DB: quickdine
-      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${db_password}
+      POSTGRES_DB: ${db_name}
+      POSTGRES_USER: ${db_user}
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d
+
+  backend:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" 
+    depends_on:
+      - postgres
+    environment:
+      db_name: ${db_name}
+      db_user: ${db_user}
+      db_password: ${db_password}
+      db_host: ${db_host}
+      db_port: ${db_port}
+    volumes:
+      - /app/node_modules
 
 volumes:
   postgres_data:
+  

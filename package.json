@@ -11,17 +11,22 @@
   },
   "dependencies": {
     "@types/jsonwebtoken": "^9.0.5",
+    "bcrypt": "^6.0.0",
     "dotenv": "^16.0.3",
     "jsonwebtoken": "^9.0.2",
     "koa": "^2.14.2",
     "koa-bodyparser": "^4.4.0",
     "koa-router": "^12.0.0",
     "node-fetch": "^3.3.2",
+    "pg": "^8.16.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.7",
     "typescript": "^5.0.4",
     "typesense": "^1.5.3"
   },
   "devDependencies": {
     "@koa/cors": "^4.0.0",
+    "@types/bcrypt": "^5.0.2",
     "@types/koa": "^2.13.6",
     "@types/koa__cors": "^4.0.0",
     "@types/koa-bodyparser": "^4.3.10",
