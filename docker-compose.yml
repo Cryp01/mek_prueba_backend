@@ -1,18 +1,6 @@
 version: '3'
 
 services:
-  postgres:
-    image: postgres:14
-    ports:
-      - "5435:5435"
-    environment:
-      POSTGRES_PASSWORD: ${db_password}
-      POSTGRES_DB: ${db_name}
-      POSTGRES_USER: ${db_user}
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-      - ./init:/docker-entrypoint-initdb.d
-
   backend:
     build:
       context: ./
@@ -30,6 +18,12 @@ services:
     volumes:
      - ./src:/app
       - /app/node_modules
+    networks:
+      - coolify
+
+networks:
+  coolify:
+    external: true
 
 volumes:
   postgres_data:
