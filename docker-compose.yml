@@ -28,6 +28,7 @@ services:
       db_host: ${db_host}
       db_port: ${db_port}
     volumes:
+     - ./src:/app
       - /app/node_modules
 
 volumes:
