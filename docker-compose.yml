@@ -4,7 +4,7 @@ services:
   postgres:
     image: postgres:14
     ports:
-      - "5432:5432"
+      - "5435:5435"
     environment:
       POSTGRES_PASSWORD: ${db_password}
       POSTGRES_DB: ${db_name}
@@ -18,7 +18,7 @@ services:
       context: ./
       dockerfile: Dockerfile
     ports:
-      - "8080:8080" 
+      - "2020:2020" 
     depends_on:
       - postgres
     environment:

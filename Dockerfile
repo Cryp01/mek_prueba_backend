@@ -12,6 +12,6 @@ RUN npm run build
 
 ENV NODE_ENV=production
 
-EXPOSE 8080
+EXPOSE 2020
 
 CMD ["node", "dist/index.js"]
