@@ -1,5 +1,3 @@
-import dotenv from "dotenv";
-dotenv.config();
 import { route } from "./routes/router";
 import bodyParser from "koa-bodyparser";
 import koa from "koa";
